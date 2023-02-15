@@ -1,0 +1,107 @@
+*{
+    box-sizing: border-box;
+}
+body {
+    background-color: #f3f6f4;
+    margin:0px;
+    padding: 0;
+}
+main{
+    margin-top: 60px;
+    padding: 20px 0px 80px 0px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    height: 70vh;
+}
+.logo-titulo {
+    display: flex;
+    flex-direction: column;
+}
+
+.logo-titulo img {
+    align-self: center;
+}
+
+h1 {
+    font-family: 'MV Boli', sans-serif;
+    font-size: 25px;
+    text-align: center;
+}
+.error p{
+    font-family: 'Inter';
+    color: red;
+}
+.name{
+    font-family: 'MV Boli', sans-serif;
+}
+
+.name p{
+    margin: 0px 0px 0px 0px;
+}
+
+.name input{
+    font-family: 'Inter';
+    border: none;
+    box-shadow: rgb(0 0 0 / 35%) 0px 5px 5px;
+    width: 80vw;
+    
+}
+
+.boton{
+    padding: 15px;
+    text-align: center;
+}
+form {
+    display: flex;
+    flex-direction: column;
+}
+.buttom {
+    min-width: 130px;
+    height: 40px;
+    color: #fff;
+    padding: 5px 10px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    position: relative;
+    display: inline-block;
+    outline: none;
+    border-radius: 5px;
+    border: none;
+    background: #ced4da;
+    box-shadow: 0 5px #adb5bd;
+  }
+  .buttom:hover {
+    box-shadow: 0 3px #adb5bd;
+    top: 1px;
+  }
+  .buttom:active {
+    box-shadow: 0 0 #adb5bd;
+    top: 5px;
+  }
+  .remember{
+    margin-top: 10px;
+    font-family: 'MV Boli', 'sans-serif';
+  }
+  .help {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .help a {
+    font-family: 'MV Boli', 'sans-serif';
+    color: black;
+    text-align: center;
+  }
+
+@media (min-width: 700px) {
+    .name input{
+        max-width: 560px;
+    }
+}
+@media (min-width: 900px) {
+    main{
+        height: 100vh;
+    }
+}

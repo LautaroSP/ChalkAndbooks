@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <%- include('../partials/head.ejs') %>
+    <link rel="stylesheet" href="/css/editContra.css">
+    <script src="/scripts/contraseña.js"></script>
+
+</head>
+
+<body>
+    <%- include('../partials/header.ejs') %>
+    <main>
+        <div class="maindiv">
+            <div class="logo">
+                <img src="/images/chalkLogo.png" alt="">
+            </div>
+            <h1>Cambiar Contraseña</h1>
+            <div class="formdiv">
+                <form action="/user/profile/<%= id %>/editContra" method="post">
+                    <div class="newP">
+                        <label for="password">Nueva Contraseña</label>
+                        <input type="password" name="password" id="password">
+                        <label for="coPass">Confirmar Contraseña</label>
+                        <input type="password" name="coPass" id="coPass">
+                    </div>
+                    <input type="submit" value="Cambiar Contraseña">
+                </form>
+                <a href="/user/profile"><button href="/">Cancelar</button></a>
+            </div>
+            <p class="error">Las contraseñas deben ser iguales!</p>
+            <p class="lenght">Debe tener mas de 8 caracteres!</p>
+        </div>
+    </main>
+    <%- include('../partials/footer.ejs') %>
+</body>
+
+</html>

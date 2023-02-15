@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <%- include('../partials/head.ejs') %>
+    <link rel="stylesheet" href="/css/productDetail.css">
+
+</head>
+
+<body>
+    <%- include('../partials/header.ejs') %>
+    <main>
+        <div class="maindiv">
+        <div class="container">
+            <div class="portada">
+                <img src="/images/portadas/<%= product.portada %>" alt="">
+            </div>
+            <div>
+                <h1><%=  product.title %></h1>
+                <div class="first-container">
+                    <p class="precio">$<%=  product.price %>
+                    </p>
+                    <div class="info">
+                        <p>Autor:<%=  product.autors_book.name %></p>
+                        <p>Editorial: <%=product.editorial%></p>
+                        <p>Genero: <%=  product.genres_book.name %></p>
+                        <p>Publicado: <%=product.published%></p>
+                    </div>
+                    <p class="descripcion"><%=  product.description %></p>
+                </div>
+                <div class="cantidad">
+                    <form action="/products/carrito" method="get">
+                        <label class="stock" for="">
+                            <p>Cantidad</p>
+                            <input class="inputNumber" type="number">
+                        </label>
+                        <div class="containerBoton">
+                            <input class="boton" type="submit" value="Agregar al carrito">
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+        <% if (locals.admin) { %>
+            <div class="containerEdit">
+                <form class="edit" action="/products/detalleProducto/<%= product.id %>/edit" >
+                    <input type="submit" value="Editar Producto">
+                </form>
+            </div>
+        <% } %>
+        
+        </div>
+    </main>
+    <%- include('../partials/footer.ejs') %>
+</body>
+
+</html>

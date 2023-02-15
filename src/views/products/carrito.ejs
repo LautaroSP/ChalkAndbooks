@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <link rel="stylesheet" href="/css/carrito.css">
+    <%- include('../partials/head.ejs') %>
+</head>
+<%- include('../partials/header.ejs') %>
+
+    <body>
+        <main>
+            <div class="maindiv">
+                <div class="logo">
+                    <img src="/images/chalkLogo.png" alt="">
+                </div>
+                <div class="wrapper-tit"></div>
+                <div class="carrito-tit">
+                    <h1>Mi Carrito</h1>
+                </div>
+                <section>
+                    <article>
+                        <div class="imagen-titulo">
+                            <img src="./images/harryp.png" alt="">
+                            <div class="titulo-precio">
+                                <p>Titulo</p>
+                                <p class="price">$Precio</p>
+                            </div>
+                        </div>
+                        <div class="wrapper-ver"></div>
+                        <div class="cantidad">
+                            <form action="" method="post">
+                                <label for="">Cantidad
+                                    <select name="" id="">
+                                        <option value="1">1</option>
+                                        <option value="1">2</option>
+                                    </select>
+                                </label>
+                            </form>
+                        </div>
+                    </article>
+                    <div class="wrapper-hor"></div>
+                </section>
+                <div class="total">
+                    <p>Total: $</p>
+                </div>
+            </div>
+        </main>
+        <%- include('../partials/footer.ejs') %>
+    </body>
+
+</html>

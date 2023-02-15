@@ -1,0 +1,56 @@
+[
+ {
+  "id": 1,
+  "nombre": "Lauti",
+  "apellido": "Parandelli ",
+  "email": "lautaroparandelli@gmail.com",
+  "password": "$2a$10$Ur/C9WoZOT1TCpjUUwgTd.DlHF2xMFp5OMs5VvGOkbo3eK5vYWL12",
+  "rol_id": 1,
+  "avatar": "avatar-Lautaro-1672515875666.png"
+ },
+ {
+  "id": 2,
+  "nombre": "Dibu",
+  "apellido": "Martinez",
+  "email": "megadibu@tecomo.com",
+  "password": "$2a$10$mxvkpyQn.gR0VlRSlEymA.NU/u4PU27WInV1Pov0UkJ/k64vcob/m",
+  "rol_id": 1,
+  "avatar": "default.png"
+ },
+ {
+  "id": 3,
+  "nombre": "Aldo",
+  "apellido": "Varela",
+  "email": "aldovarela@gmail.com",
+  "password": "$2a$10$6J7HgUcjSZwGIufk4.21j.y4p7k2RDHUYJ61xwJocqtMJYM291KOS",
+  "rol": "viewer",
+  "avatar": "default.png"
+ },
+ {
+  "id": 4,
+  "nombre": "Lionel",
+  "apellido": "Messi",
+  "email": "liomessi@gmail.com",
+  "password": "$2a$10$r2BXnUXs2XNsLldJzKBvJ.nP5ZW3b5ITNJOAWquZ89pbWU1tuifNC",
+  "rol": "viewer",
+  "avatar": "default.png"
+ },
+ {
+  "id": 5,
+  "nombre": "Pepe",
+  "apellido": "Argento",
+  "email": "pepeargent@gmail.com",
+  "password": "$2a$10$dwqvqvyCleD3o.QIThmlpearbMAGI8463eNJlCDW/xBGp6h8/nXUm",
+  "rol": "viewer",
+  "avatar": "default.png"
+ },
+ {
+  "id": 6,
+  "nombre": "Gonzalo",
+  "apellido": "Montiel",
+  "email": "gonzamontiel@gmail.com",
+  "password": "$2a$10$cDVgX.0SKK1mfvT0xro9J.JV047VP00fxZAbLmCljSULM.ZD2eJnC",
+  "rol": "viewer",
+  "avatar": "default.png"
+ }
+]

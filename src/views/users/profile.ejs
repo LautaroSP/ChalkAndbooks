@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <%- include('../partials/head.ejs') %>
+    <link rel="stylesheet" href="/css/profile.css">
+
+</head>
+
+<body>
+    <%- include('../partials/header.ejs') %>
+    <main>
+        <div class="maindiv">
+            <div class="logo">
+                <img src="/images/chalkLogo.png" alt="">
+            </div>
+            <h1>Mi Perfil</h1>
+            <div class="profile">
+                <div class="avatar-info">
+                    <div class="avatar">
+                        <img src="/images/avatar/<%= user.avatar %>" alt="">
+                    </div>
+                    <div class="informacion">
+                        <div class="data">
+                        <p>Nombre : </p>
+                        </div>
+                        <p><%= user.nombre %></p>
+                        <div class="data">
+                        <p>Apellido : </p>
+                        <p><%= user.apellido%></p>
+                        </div>
+                        <div class="data">
+                        <p>Email : </p>
+                        <p><%= user.email%></p>
+                        </div>
+                        <div class="data">
+                        <p>Rol: </p>
+                        <p>Admin</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="botones">
+                    <form action="/user/profile/<%= user.id %>/editContra" method="get">
+                        <button class="buttom-contra" type="submitt">Cambiar Contraseña</button>
+                    </form>
+                    <form action="/user/profile/<%= user.id %>/editProfile" method="get">
+                        <button class="buttom" type="submitt" >Editar</button>
+                    </form>
+                    </div>
+            </div>
+        </div>
+    </main>
+    <%- include('../partials/footer.ejs') %>
+</body>
+
+</html>

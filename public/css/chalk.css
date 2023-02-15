@@ -1,0 +1,209 @@
+*{
+    box-sizing: border-box;
+}
+body {
+    background-color: #f3f6f4;
+    margin:0px;
+    padding: 0;
+}
+.logoChalk{
+    display: flex;
+    justify-content: center;
+    margin-top: 30px;
+}
+
+.form-busqueda {
+    display: flex;
+    justify-content: center;
+    padding: 15px;
+}
+
+.form-busqueda input {
+    width: 300px;
+    font-family: 'Inter';
+    border: none;
+    box-shadow: rgb(0 0 0 / 35%) 0px 5px 5px;
+}
+
+.recomend p{
+    font-family: 'MV Boli', sans-serif;
+    text-align: center;
+}
+
+.flip-card{
+    z-index: 15;
+    width: 300px;
+    height: 400px;
+    perspective: 1000px;
+    margin:auto;
+    padding-bottom: 5%;
+}
+.flip-card-inner {
+    z-index: 15;
+    position: relative;
+    width: 100%;
+    height: 100%;
+    text-align: center;
+    transition: transform 0.6s;
+    transform-style: preserve-3d;
+    font-family: 'MV Boli', sans-serif;
+}
+
+.flip-card-front{
+    z-index: 15;
+    background-color: white;
+}
+.flip-card-front img{
+    z-index: 15;
+    width: 100%;
+    height: 50%;
+    margin-top: 0;
+    border-radius: 16px 16px 0 0;
+}
+.flip-card-back{
+    z-index: 50;
+    background-image: url('../images/paperback.jpg');
+    color: black;
+    transform: rotateY(180deg);
+}
+.flip-card-back img {
+    width: 140px;
+    margin-top: 1rem;
+}
+.flip-card-back p{
+    font-size: 13px;
+    font-family: 'Inter';
+}
+
+.flip-card-back h3 {
+    margin-bottom: 0.3rem;
+}
+.flip-card-back h1 {
+    margin:0;
+}
+h3{
+    font-family: 'MV Boli', sans-serif;
+    text-align: center;
+    margin-left: 50px;
+}
+section{
+        margin-bottom: 30px;
+}
+.top10 {
+    width: 100%;
+    box-shadow: none;
+    border-radius: 0;
+    border: 0px;
+    border-top: 1px dotted grey;
+    align-items: flex-start;
+    height: auto;
+    flex-direction: row;
+    font-size: 16px;
+    }
+    
+    
+    .top10-padre {
+     margin-left: 50px;
+     margin-right: 50px;
+    }
+    
+    .top10 a {
+        font-family: 'Inter';
+        text-decoration: none;
+        color: rgb(105, 105, 187);
+        font-size: 16px;
+    }
+    
+    .descripcion-top10 {
+        font-family: 'Inter';
+        font-size: 12px;
+        display: none;
+    }
+
+@media(min-width: 360px){
+
+ .flip-card-back{
+    display: none;
+}
+.flip-card-front{
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    -webkit-backface-visibility: hidden;
+    backface-visibility: hidden;
+    border-radius: 16px;
+    box-shadow: rgba(0, 0, 0, 0.15) 1.95px 1.95px 2.6px;
+
+}
+
+
+}
+
+@media (min-width: 700px) {
+    .contenedor{
+        display: flex;
+    }
+    .logo-busqueda {
+        display: flex;
+        margin-left: 50px;
+    }
+    .form-busqueda input {
+        height: 25px;
+        width: 45vw;
+        align-self: flex-end;
+        margin-bottom: 10px;
+        margin-left: 5px;
+    }
+    .recomend p{
+        text-align: initial;
+        margin-left: 45px;
+    }
+    
+    #ccard.flip-card {
+        display: none;
+    }
+    .descripcion-top10 {
+        display: block;
+        font-size:13px;
+    }
+}
+
+@media (min-width: 950px){
+    .cards {
+        display: flex;
+    }
+    .form-busqueda input {
+        margin-left: 40px;
+        width: 55vw;
+    }
+    .flip-card-back{
+        display: block;
+    }
+    .flip-card:hover .flip-card-inner{
+        transform: rotateY(180deg);
+        box-shadow: none;
+    }
+    .cards {
+        z-index: 15;
+    }
+    .flip-card-front,
+    .flip-card-back {
+        z-index: 15;
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        -webkit-backface-visibility: hidden;
+        backface-visibility: hidden;
+        border-radius: 16px;
+        box-shadow: rgba(0, 0, 0, 0.15) 1.95px 1.95px 2.6px;
+    }
+    .medios{
+        display: block;
+    }
+}
+
+@media (min-width: 1300px) {
+    #ccard.flip-card {
+        display: block;
+    }
+}

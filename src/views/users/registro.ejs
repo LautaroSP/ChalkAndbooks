@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+        <link rel="stylesheet" href="/css/register.css">
+        <%- include('../partials/head.ejs') %>
+        <script src="/scripts/register.js"></script>
+</head>
+
+<body>
+    <%- include('../partials/header.ejs') %>
+        <main>
+            <div class="present">
+                <img src="/images/chalkLogo.png" alt="">
+                <h4>
+                    ÚNETE A CHALK AND BOOKS!
+                </h4>
+            </div>
+            <form action="" method="post" enctype="multipart/form-data">
+                <p class="image">Solo se permiten 'png' , 'jpg' , 'jpeg'(No es obligatorio el avatar!)</p>
+                <p class="imagentitle"></p>
+                <div class="fileUp">
+                    <label class="fileLab" for="fileUp">
+                        Subi tu avatar!
+                        <i class="fa-solid fa-camera"></i>
+                        <input type="file" name="avatar" id="fileUp">
+                    </label>
+                    <!-- <% if (locals.errors && errors.avatar) { %>
+                        <div class="error">
+                        <p><%= errors.avatar.msg %> </p>
+                        </div>
+                    <% } %> -->
+                    <div class="fullname">
+                        <label for="" class="name">
+                            <p>Nombre</p>
+                            <input type="text" name="nombre" id=""
+                                value="<% if (locals.data) { %><%=data.nombre%><% } %>">
+                        </label>
+
+                        <% if (locals.errors && errors.nombre) { %>
+                            <div class="error">
+                                <p>
+                                    <%= errors.nombre.msg %>
+                                </p>
+                            </div>
+                            <% } %>
+                                <label for="" class="name">
+                                    <p>Apellido</p>
+                                    <input type="text" name="apellido" id="" value= "<% if (locals.data) { %><%=data.apellido%><% } %>"></label>
+                                    <% if (locals.errors && errors.apellido) { %>
+                                        <div class="error">
+                                        <p><%= errors.apellido.msg %> </p>
+                                        </div>
+                                    <% } %>
+                    </div>
+                </div>
+                <div class="iText">
+                    <label for="email">
+                        <p>Email</p>
+                        <input type="text" name="email" id="email"value= "<% if (locals.data) { %><%= data.email %><% } %>"></label>
+                        <% if (locals.errors && errors.email) { %>
+                            <div class="error">
+                            <p><%= errors.email.msg %> </p>
+                            </div>
+                        <% } %>
+                </div>
+                <div class="iText">
+                    <label for="password">
+                        <p>Contraseña</p>
+                        <input type="password" name="password" id="password">
+                    </label>
+                    <% if (locals.errors && errors.password) { %>
+                        <div class="error">
+                        <p><%= errors.password.msg %> </p>
+                        </div>
+                    <% } %>
+                </div>
+                <div class="iText">
+                    <label for="copassword">
+                        <p>Confirmar contraseña</p>
+                        <input type="password" name="copassword" id="coPass">
+                    </label>
+                    <p class="error">Las contraseñas deben coincidir!</p>
+                </div>
+                <div class="legals">
+                    <label for="">
+                        <input type="checkbox" name="terms" id="" required>
+                        <p>Aceptas los terminos y condiciones de ChalkAndBooks</p>
+                    </label>
+                </div>
+                <div class="botones">
+                    <input type="submit" value="Registrarse" class="buttom">
+                    <input type="reset" value="Borrar" class="buttom">
+                </div>
+            </form>
+        </main>
+        <%- include('../partials/footer.ejs') %>
+</body>
+
+</html>

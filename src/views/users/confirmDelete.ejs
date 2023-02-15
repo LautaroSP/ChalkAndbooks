@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <%- include('../partials/head.ejs') %>
+    <link rel="stylesheet" href="/css/editContra.css">
+
+</head>
+
+<body>
+    <%- include('../partials/header.ejs') %>
+    <main>
+        <div class="maindiv">
+            <div class="logo">
+                <img src="/images/chalkLogo.png" alt="">
+            </div>
+            <h1>¿ Desea eliminar el usuario de : <%= user.email %>? </h1>
+            <div class="formdiv">
+                <form action="/user/destroyUserAdmin/<%= user.id %>" method="post">
+                    <div class="newP">
+                        <input type="submit" value="Eliminar Usuario">
+                        <button href="/user/listUsers">Cancelar</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </main>
+    <%- include('../partials/footer.ejs') %>
+</body>
+
+</html>

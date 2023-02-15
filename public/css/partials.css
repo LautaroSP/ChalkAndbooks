@@ -1,0 +1,203 @@
+.header {
+    width: 100%;
+}
+
+#sidebarMenu{
+    height: 100%;
+    position:fixed;
+    left:0;
+    top:0;
+    width: 150px;
+    margin-top: 55px;
+    z-index: 10000;
+    background-color: #1c1c1c;
+    transform: translateX(-250px);
+    transition: transform 300ms ease-in-out;
+}
+.menu{
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+.menu li {
+    color: black;
+    border-bottom: 1px solid #456;
+}
+.menu li a{
+    color: whitesmoke;
+    display: block;
+    text-decoration: none;
+    text-transform: uppercase;
+    padding: 20px;
+    font-family: 'Inter';
+}
+.sidebarIcon{
+    width: 22px;
+    height: 22px;
+    position: absolute;
+    z-index: 10;
+    top:20px;
+    left:20px;
+    /* background-color: aliceblue; */
+    cursor: pointer;
+}
+#Open{
+    opacity: 0;
+}
+#Open:checked ~ #sidebarMenu{
+    transform: translate(0px);
+}
+.wrapper{
+    height: 3px;
+    background-color: rgb(255, 255, 255);
+    transition: all 0.5s;
+}
+.wrapper.second, .wrapper.third {
+    margin-top: 3px;
+}
+#Open:checked ~ .sidebarIcon > .wrapper.second{
+    opacity: 0;
+}
+
+#Open:checked ~ .sidebarIcon > .wrapper.first{
+    transform: rotate(315deg);
+    margin-top: 8px;
+}
+
+#Open:checked ~ .sidebarIcon > .wrapper.third{
+    transform:rotate(-315deg);
+    margin-top: -8px;
+}
+.navbar-top {
+    top: 0;
+    width: 100%;
+    height: 55px;
+    position: fixed;
+    z-index: 100;
+    display:flex;
+    background-color: black;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    /* align-content: center; */
+    justify-content: space-between;
+    height: 55px;
+}
+
+.icons-navbar{
+    display: flex;
+    flex-direction: row;
+    align-content: center;
+    align-items: center;
+    margin-right: 50px;
+}
+
+.burger-menu{
+    align-self: center;
+}
+
+.burger-menu i{
+    color: white;
+    padding-left: 5vw;
+}
+
+.icons-navbar i{
+    color: white;
+    align-self: center;
+}
+.icons-navbar a{
+    margin: 0 20px 0 20px;
+}
+main{
+    margin-top: 55px;
+}
+footer {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    background-color: black;
+}
+
+footer div ul li {
+    display: flex;
+    flex-direction: column;
+    list-style: none;
+
+}
+
+footer div ul li a {
+    text-decoration: none;
+    font-size: 15px;
+    color:whitesmoke;
+}
+
+footer h2 {
+    font-size: 20px;
+    color:white;
+}
+
+.sobre-nosotros, .ayuda, .medios, .contacto .follow .seguir{
+    padding-inline-start: 0;
+}
+
+.icored{
+    color: rgba(255, 255, 255, 1);
+    font-size: 35px;
+    border-radius: 10px;
+    border:rgba(255, 255, 255, 0.5) solid 1px;
+    margin-top: 5px;
+    padding: 5px;
+    margin-left: 5px;
+    margin-right: 5px;
+}
+.icored:hover{
+    color: rgba(126, 126, 134, 0.8)
+}
+.seguir{
+    display: flex;
+    justify-content: space-around;
+}
+
+.redes {
+        height:80%;
+}
+
+.pagos {
+     width: 100%;
+     height: 110px;
+     padding: 1%;
+}
+
+.legales p {
+    font-size: 10px;
+    color: white;
+}
+
+.follow {
+    padding-inline-start: 0;
+}
+
+@media(min-width: 360px){
+    .bannercitos,
+    .medios{
+        display: none;
+    }
+    .lista {
+        display: flex;
+        flex-direction: column-reverse;
+        justify-content: space-around;
+        align-items: center;
+        text-align: center;
+    }
+}
+
+@media (min-width: 700px) {
+    .bannercitos{
+        display: block;
+    }
+    .lista{
+        display: flex;
+        flex-direction: row-reverse;
+        align-items: baseline;
+        justify-content: space-evenly;
+    }
+}

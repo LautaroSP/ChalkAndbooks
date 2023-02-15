@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <link rel="stylesheet" href="/css/chalk.css">
+    <%- include('partials/head.ejs') %>
+</head>
+
+<body>
+        
+    <%- include('partials/header.ejs') %>
+    <main>
+        <!-- Start LOGO -->
+        <div class="logo-busqueda">
+            <div class="logoChalk">
+                <img src="/images/chalkLogo.png" alt="">
+            </div>
+            <!-- Finish LOGO -->
+            <!-- Start Busqueda -->
+            <form action="" method="get" class="form-busqueda">
+                <input type="text" name="busqueda" id="" placeholder="Busca por titulo o autor!">
+            </form>
+        </div>
+            <!-- Finish Busqueda -->
+            <div class="recomend">
+                <p>La recomendación de CHALKANDBOOKS!</p>
+            </div>
+        
+        <!-- Cards : -->
+        <div class = "cards">
+            <% for( let i = 0; i < (books.length -1) ; i++ ) { %>
+                <div class="flip-card">
+                    <div class="flip-card-inner">
+                        <div class="flip-card-front">
+                            <img src="<%= books[i].banner %>" alt="">
+                            <p><%= books[i].title %> </p>
+                            <p>$ <%= books[i].price%></p>
+                        </div>
+                        <div class="flip-card-back">
+                            <p><%= books[i].description %> </p>
+                            <a href="/products/detalleProducto/<%= books[i].id %> ">Comprar</a>
+                        </div>
+                    </div>
+                </div>
+                
+            <% } %>
+        
+        <!-- <div class="flip-card">
+            <div class="flip-card-inner">
+                <div class="flip-card-front">
+                    <img src="/images/BannerHP.jpg" alt="">
+                    <p>Harry Potter</p>
+                    <p>Price</p>
+                </div>
+                <div class="flip-card-back">
+                    <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Tempore similique velit voluptatem
+                        iusto, dolores impedit, unde maiores omnis expedita aliquam quaerat ab ipsum minima doloremque
+                        veritatis, at porro esse hic!</p>
+                </div>
+            </div>
+        </div>
+        <div class="flip-card">
+            <div class="flip-card-inner">
+                <div class="flip-card-front">
+                    <img src="/images/BannerHP.jpg" alt="">
+                    <p>Harry Potter</p>
+                    <p>Price</p>
+                </div>
+                <div class="flip-card-back">
+                    <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Tempore similique velit voluptatem
+                        iusto, dolores impedit, unde maiores omnis expedita aliquam quaerat ab ipsum minima doloremque
+                        veritatis, at porro esse hic!</p>
+                </div>
+            </div>
+        </div> -->
+        <div id= "ccard" class="flip-card">
+            <div class="flip-card-inner">
+                <div class="flip-card-front">
+                    <img src="<%= books[3].banner %> " alt="">
+                    <p><%= books[3].title %></p>
+                    <p>$ <%= books[3].price %></p>
+                </div>
+                <div class="flip-card-back">
+                    <p><%= books[3].description %> </p>
+                    <a href="/products/detalleProducto/<%= books[3].id %> ">Comprar</a>
+                </div>
+            </div>
+            
+        </div>
+        </div>
+        <div class="recomend">
+            <p>Estas buscando algo mas? Podes ver todos nuestros libros <a href="/products">AQUI</a></p>
+        </div>
+        <h3>Los 10 más leídos del MUNDO!</h3>
+        <div class="contenedor">
+
+            <section>
+                <div class="top10-padre">
+                    <article class="top10">1. <a href="/products/detalleProducto/13">La Biblia</a></article>
+                    <p class="descripcion-top10">La Biblia es el conjunto de libros canónicos del judaísmo y el cristianismo. La canonicidad de cada libro varía dependiendo de la tradición adoptada. Según las religiones judía y cristiana, transmite la palabra de Dios.</p>
+                    <article class="top10">2. <a href="/products/detalleProducto/14">Citas del Presidente Mao Tse-Tung</a></article>
+                    <p class="descripcion-top10">Citas del Presidente Mao, más conocido en Occidente como el Libro Rojo de Mao o el Pequeño Libro Rojo, es un libro publicado desde abril de 1964 por el gobierno de la República Popular China en el que se recogen citas y discursos pronunciados por Mao Tse-Tung, que en aquel momento era el presidente del país y del Partido Comunista de China.</p>
+                    <article class="top10">3. <a href="/products/detalleProducto/15">Harry Potter</a></article>
+                    <p class="descripcion-top10">Harry Potter es una heptalogía de novelas fantásticas escrita por la autora británica J. K. Rowling, en la que se describen las aventuras del joven aprendiz de mago Harry Potter y sus amigos Hermione Granger y Ron Weasley, durante los siete años que pasan en el Colegio Hogwarts de Magia y Hechicería. El argumento se centra en la lucha entre Harry Potter y el malvado mago Lord Voldemort, quien mató a los padres de Harry en su afán de conquistar el mundo mágico.</p>
+                    <article class="top10">4. <a href="/products/detalleProducto/16">El Señor de los Anillos</a></article>
+                    <p class="descripcion-top10">El Señor de los Anillos es una novela de fantasía épica escrita por el filólogo y escritor británico J. R. R. Tolkien. Su historia se desarrolla en la Tercera Edad del Sol de la Tierra Media, un lugar ficticio poblado por hombres y otras razas antropomorfas como los hobbits, los elfos o los enanos, así como por muchas otras criaturas reales y fantásticas. La novela narra el viaje del protagonista principal, el hobbit Frodo Bolsón, para destruir el Anillo Único y la consiguiente guerra que provocará el enemigo para recuperarlo, ya que es la principal fuente de poder de su creador, el Señor oscuro Sauron.</p>
+                    <article class="top10">5. <a href="/products/detalleProducto/17">El Alquimista</a></article>
+                    <p class="descripcion-top10">El alquimista es un libro escrito por el escritor brasileño Paulo Coelho que ha sido traducido a más de 63 lenguas y publicado en 150 países, y que ha vendido un total de 65 millones de copias en todo el mundo.1 El libro trata sobre los sueños y los medios que utilizamos para alcanzarlos, sobre el azar en nuestra vida y las señales que se presentan a lo largo de esta.</p>
+                    <article class="top10">6. <a href="/products/detalleProducto/18">El Codigo da Vinci</a></article>
+                    <p class="descripcion-top10">El código Da Vinci es una novela de misterio escrita por Dan Brown. […] Al combinar los géneros de suspenso detectivesco y esoterismo Nueva Era, con una teoría de conspiración relativa al Santo Grial y al papel de María Magdalena en el cristianismo, la novela espoleó el difundido interés (sobre todo en los Estados Unidos de América) por ciertas teorías de complots «urdidos en la sombra por poderes ocultos», un fenómeno definido por Brown como el «auge conspiranoico».</p>
+                    <article class="top10">7. <a href="/products/detalleProducto/19">Crepusculo - La Saga</a></article>
+                    <p class="descripcion-top10">Crepúsculo es una novela romántica de vampiros dirigida al público adolescente, escrita por Stephenie Meyer y publicada en 2005. Es la primera parte de una serie de cuatro libros, de la que están publicados, además de Crepúsculo, Luna nueva, Eclipse, y Amanecer. Sol de medianoche es un proyecto aparte, sin finalizar, en el que Stephenie lleva trabajando desde hace tiempo; en el cual se repite la historia de Crepúsculo pero narrada por Edward Cullen, este proyecto ha sido suspendido indefinidamente por la autora, debido a la distribución ilegal de los primeros 12 capítulos.</p>
+                    <article class="top10">8. <a href="/products/detalleProducto/20">Lo que el viento se llevó</a></article>
+                    <p class="descripcion-top10">Lo que el viento se llevó es una novela escrita por la autora Margaret Mitchell; es uno de los libros más vendidos de la historia, un clásico de la literatura de los Estados Unidos y debido a su adaptación al cine es uno de los más grandes iconos o mitos de la cultura popular contemporánea.</p>
+                    <article class="top10">9. <a href="/products/detalleProducto/21">Piense y hágase rico</a></article>
+                    <p class="descripcion-top10">Piense y hágase rico es un libro del escritor estadounidense Napoleón Hill. Se conoce como el método más famoso y efectivo para hacer dinero […], ha tenido más éxito que cualquier otra obra de su género. Para escribirlo, Napoleón Hill entrevistó a las 500 familias más ricas de los Estados Unidos, quienes le revelaron al autor el origen de su fortuna.</p>
+                    <article class="top10">10. <a href="/products/detalleProducto/22">El Diario de Ana Frank</a></article>
+                    <p class="descripcion-top10">Con el título de El diario de Ana Frank se conoce la edición de los diarios personales escritos por la niña judía Ana Frank (Annelies Marie Frank) entre el 12 de junio de 1942 y el 1 de agosto de 1944 en un total de tres cuadernos conservados a la actualidad, donde relata su historia como adolescente y el tiempo de dos años cuando tuvo que ocultarse de los nazis en Ámsterdam, durante la Segunda Guerra Mundial.</p>
+                </div>
+            </section>
+    </main>
+    <%- include('partials/footer.ejs') %>
+</body>
+
+</html>

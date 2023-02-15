@@ -1,0 +1,125 @@
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin:0;
+    padding: 0;
+    background-color: #f3f6f4;
+    height: 100vh;
+}
+.maindiv {
+    margin: 15px;
+    height: 1200px;
+}
+h1{
+    font-family: 'MV Boli', 'sans-serif';
+    border-bottom: 1px solid #80808042;
+    text-align: center;
+}
+.div-padre{
+    font-family: 'Inter';
+}
+.campo {
+    display: flex;
+    margin: 10px 0;
+    flex-direction: column;
+}
+.campo label{
+    width: 46%;
+}
+.campo input{
+    font-family: 'Inter';
+    border: none;
+    box-shadow: rgb(0 0 0 / 35%) 0px 5px 5px;
+}
+.campo select {
+    font-family: 'Inter';
+    border: none;
+    box-shadow: rgb(0 0 0 / 35%) 0px 5px 5px;
+}
+.descProduct{
+    display: flex;
+    flex-direction: column;
+}
+.descProduct textarea {
+    border: none;
+    font-family: 'Inter';
+    box-shadow: rgb(0 0 0 / 35%) 0px 5px 5px;
+}
+.cprecio {
+    display: flex;
+}
+.cprecio input{
+    width: 100px;
+    margin: 0 0 0 10px;
+}
+.cprecio p{
+    margin:0;
+}
+.campoImagen{
+    display: flex;
+    flex-direction: column;
+}
+
+#stock.precio{
+    border: none;
+    font-family: 'Inter';
+    box-shadow: rgb(0 0 0 / 35%) 0px 5px 5px;
+}
+.imagen{
+    margin-top: 15px;
+}
+#file-upload-button {
+    border: 1px solid rgb(18 170 18 / 82%);
+    padding: 5px 8px 5px 8px;
+    box-shadow: 1px 1px 1px 1px rgb(18 170 18 / 82%);
+    background-color: white;
+    border-radius: 5px;
+}
+.boton {
+    display: flex;
+    justify-content: center;
+    margin: 15px;
+}
+.boton input{
+    border: 1px solid rgb(18 170 18 / 82%);
+    padding: 5px 8px 5px 8px;
+    box-shadow: 1px 1px 1px 1px rgb(18 170 18 / 82%);
+    background-color: white;
+    border-radius: 5px;
+    margin: 10px;
+}
+.error p {
+    font-size: 12px;
+    font-weight: bold;
+    color: rgba(163, 6, 6, 0.644)
+}
+
+p.image { 
+    display: none;
+    font-size: 12px;
+    font-weight: bold;
+    color: rgba(163, 6, 6, 0.644)
+}
+
+.portadaActual h4 {
+    font-family: 'Inter';
+}
+.portadaActual img {
+    max-width: 300px;
+    max-height: 300px;
+}
+@media (min-width: 900px){
+    .maindiv{
+        margin: 0 25vw 0px 25vw;
+        background-color: #f3f6f4;
+        /* box-shadow: rgb(0 0 0 / 15%) 1.95px 1.95px 2.6px; */
+        box-shadow: 1px 7px 17px 14px rgb(0 0 0 / 75%);
+        -webkit-box-shadow: 1px 7px 17px 14px rgb(0 0 0 / 75%);
+        -moz-box-shadow: 1px 7px 17px 14px rgba(0,0,0,0.75);
+        padding: 15px;
+        padding-bottom: 100px;
+        height: 1200px;
+    }
+}

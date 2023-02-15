@@ -1,0 +1,209 @@
+*{
+    box-sizing: border-box;
+}
+body {
+    background-color: #f3f6f4;
+    margin:0px;
+    padding: 0;
+}
+
+main{
+    margin-top: 60px;
+    padding: 20px 0px 80px 0px;
+    height: 70vh;
+}
+
+.present {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.present h4{
+    font-family: 'MV Boli', sans-serif;;
+}
+
+.fileUp {
+    display: flex;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.fileUp input[type=file]{
+    display:none;
+}
+.fileLab {
+    cursor: pointer;
+    border: 1px solid #1c1c1c;
+    margin-left: 10px;
+    padding: 25px;
+    border-radius: 5%;
+    margin-right: 10px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    max-width: 151px;
+    justify-content: center;
+    font-family: 'Inter';
+    text-align: center;
+    font-size: 14px;
+}
+.fileUp i{
+    color: black;
+}
+.imagenPerfil {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 15px;
+}
+.imagenPerfil img {
+    max-width: 200px;
+    border-radius: 15px;
+}
+.name{
+    font-family: 'MV Boli', sans-serif;
+}
+
+.name p{
+    margin: 0px 0px 0px 0px;
+}
+
+.name input{
+    font-family: 'Inter';
+    border: none;
+    box-shadow: rgb(0 0 0 / 35%) 0px 5px 5px;
+    
+}
+
+.iText{
+    font-family: 'MV Boli', sans-serif;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+}
+.iText label {
+    width: 70%;
+}
+.iText input {
+    font-family: 'Inter';
+    border: none;
+    box-shadow: rgb(0 0 0 / 35%) 0px 5px 5px;
+    width: 100%;
+}
+.iText p{
+    margin:0;
+}
+.error p {
+    color:red;
+    font-family: 'Inter';
+    margin:0;
+}
+p.imagentitle {
+    text-align: center;
+    font-family: 'Inter';
+}
+
+p.image, p.error { 
+    color: red;
+    text-align: center;
+    font-family: 'Inter';
+    display: none;
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+}
+.legals {
+    display:flex;
+    align-items: center;
+    justify-content: center;
+}
+.legals label {
+    display: flex;
+}
+.legals p {
+    font-family: 'Inter';
+    font-size: 12px;
+}
+.botones{
+    display: flex;
+    margin: 5px 5px 15px 5px;
+    justify-content: space-around;
+}
+.buttom {
+    min-width: 130px;
+    height: 40px;
+    color: #fff;
+    padding: 5px 10px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    position: relative;
+    display: inline-block;
+    outline: none;
+    border-radius: 5px;
+    border: none;
+    background: #ced4da;
+    box-shadow: 0 5px #adb5bd;
+    margin-top: 10px;
+  }
+  .buttom:hover {
+    box-shadow: 0 3px #adb5bd;
+    top: 1px;
+  }
+  .buttom:active {
+    box-shadow: 0 0 #adb5bd;
+    top: 5px;
+  }
+
+
+@media (min-width: 700px) {
+    main {
+        height: 1200px;
+    }
+    .fileUp{
+        display: block;
+    }
+    .fileLab{
+        margin: auto;
+    }
+    .fullname {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+    }
+    .fullname label {
+        width: 70%;
+    }
+    .fullname input{
+        width: 100%;
+    }
+    label {
+        max-width: 500px;
+    }
+    .botones{
+        max-width: 700px;
+        margin:auto;
+    }
+    .botones input {
+        margin: 0 10px 0 10px;
+    }
+    footer{
+        margin-top: 20px;
+    }
+}
+
+@media (min-width: 900px){
+    main {
+        height: 1200px;
+    }
+    .botones input {
+        margin: 0 10px 0 10px;
+    }
+}
+

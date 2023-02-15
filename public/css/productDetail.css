@@ -1,0 +1,153 @@
+*{
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    padding: 0;  
+}
+
+main{
+    background-color: #f3f6f4;
+}
+.maindiv {
+    height: 1200px;
+}
+.portada {
+    display:flex;
+    justify-content: center;
+}
+.portada img {
+    height: 200px;
+    margin: 30px;
+    max-height: 200px;
+}
+h1 {
+    text-align: center;
+    font-family: 'MV Boli', 'san-serif';
+    margin: 0 10px 0 10px;
+    border-bottom: 1px solid #80808042;
+}
+.first-container {
+    margin: 0 15px 0 15px;
+    font-family: 'Inter';
+}
+.precio {
+    color: rgba(18, 170, 18, 0.822);
+    font-size: 20px;
+    font-weight: bold;
+}
+.info{
+    display: flex;
+    font-family: 'Inter';
+    flex-direction: column;
+}
+.info p{
+    margin:10px;
+    font-size: 12px;
+}
+.descripcion{
+    font-size: 15px;
+}
+.cantidad {
+    margin: 15px;
+}
+.cantidad form {
+    display: flex;
+    justify-content: center;
+}
+.cantidad form p{
+    font-family: 'MV Boli', 'san-serif';
+    margin-bottom: 0;
+}
+.stock{
+    width: 35vw;
+}
+.inputNumber{
+    width: 50%;
+    font-family: 'Inter';
+    border: none;
+    box-shadow: rgb(0 0 0 / 35%) 0px 5px 5px;
+}
+.containerBoton{
+    align-self: flex-end;
+    margin-bottom: 10px;
+}
+.boton{
+    border: 1px solid rgb(18 170 18 / 82%);
+    padding: 5px 8px 5px 8px;
+    box-shadow: 1px 1px 1px 1px rgb(18 170 18 / 82%);
+    background-color: white;
+    border-radius: 5px;
+}
+.containerEdit{
+    padding: 5px 0 0 0;
+    border-top: 1px solid #80808042;
+    margin: 0 15px 0 15px;
+}
+.edit{
+    display: flex;
+    justify-content: center;
+}
+.edit input {
+    border: 1px solid rgb(18 170 18 / 82%);
+    padding: 5px 8px 5px 8px;
+    box-shadow: 1px 1px 1px 1px rgb(18 170 18 / 82%);
+    background-color: white;
+    border-radius: 5px;
+}
+.relacionados{
+    margin: 15px 15px 0 15px;
+}
+
+h2{
+    text-align: center;
+    font-family: 'MV Boli', 'san-serif';
+    border-top: 1px solid #80808042;
+}
+
+section {
+    display: flex;
+    justify-content: space-between;
+}
+
+section article img {
+    height: 150px;
+}
+
+
+@media (min-width: 700px) {
+    .container{
+        display:flex;
+    }
+    .portada img {
+        height: 300px;
+        max-height: 300px;
+        max-width: 300px;
+    }
+    section {
+        justify-content: center;
+    }
+    section article{
+        margin: 0px 25px 0 25px;
+    }
+    section article img {
+        height: 200px;
+    }
+}
+@media (min-width: 900px){
+    .maindiv{
+        margin: 0 25vw 0px 25vw;
+        background-color: #f3f6f4;
+        /* box-shadow: rgb(0 0 0 / 15%) 1.95px 1.95px 2.6px; */
+        box-shadow: 1px 7px 17px 14px rgb(0 0 0 / 75%);
+        -webkit-box-shadow: 1px 7px 17px 14px rgb(0 0 0 / 75%);
+        -moz-box-shadow: 1px 7px 17px 14px rgba(0,0,0,0.75);
+        padding-bottom: 15px;
+        height: 1200px;
+    }
+    .container{
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+}

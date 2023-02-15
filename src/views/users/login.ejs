@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <link rel="stylesheet" href="/css/login.css">
+    <%- include('../partials/head.ejs') %>
+
+</head>
+
+<body>
+    <%- include('../partials/header.ejs') %>
+    <main>
+        <div class="logo-titulo">
+            <img src="/images/chalkLogo.png" alt="logo de chalk and books">
+            <h1>
+                Ingresá en Chalk And Books!
+            </h1>
+        </div>
+        <div>
+            <form action="" method="post">
+                <label class="name"  for="1">
+                    <p>Email</p>
+                    <input type="text" name="email" id="1">
+                </label>
+                <% if (locals.errors && errors.email) { %>
+                    <div class="error">
+                    <p><%= errors.email.msg %> </p>
+                    </div>
+                <% } %>
+                <label class="name"  for="2">
+                    <p>Contraseña</p>
+                    <input type="password" name="password" id="2">
+                </label class="name" >
+                <label class="remember" for=""><input type="checkbox" name="remember">Recordar usuario</label>
+                <div class="boton">
+                    <input type="submit" value="Ingresá" class="buttom">
+                </div>
+            </form>
+            <div class="help">
+                <a href="/user/register">¿No tienes una cuenta?</a>
+                <a href="#">¿Olvidaste tu contraseña?</a>
+            </div>
+        </div>
+    </main>
+    <%- include('../partials/footer.ejs') %>
+</body>

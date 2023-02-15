@@ -1,0 +1,28 @@
+<header class="navbar-top">
+    <div class="burger-menu">
+        <input type="checkbox" name="" id="Open">
+        <label for="Open" class="sidebarIcon">
+        <div class="wrapper first"></div>
+        <div class="wrapper second"></div>
+        <div class="wrapper third"></div>
+        </label>
+        <div id="sidebarMenu">
+            <ul class="menu">
+                <li><a href="/">Home</a></li>
+                <li><a href="/products">Productos</a></li>
+                <% if (locals.admin) { %>
+                    <li><a href="/user/listUsers">Lista De Usuarios</a></li>
+                <% } %>
+                <li><a href="/">Contacto</a></li>
+                <li><a href="/products/carrito">Carrito</a></li>
+            </ul>
+        </div>
+    </div>
+    <div class="icons-navbar">
+        <a href="/user/profile"><i class="fa-regular fa-user"></i></a>
+        <a href="/products/carrito"><i class="fa-solid fa-cart-shopping"></i></a>
+        <% if (locals.logged) { %>
+        <a href="/user/logout"><i class="fa-solid fa-right-from-bracket"></i></a>
+        <% } %> 
+    </div>
+</header>

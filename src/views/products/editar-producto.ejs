@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <%- include('../partials/head.ejs') %>
+    <link rel="stylesheet" href="/css/crearProducto.css">
+    <script src="/scripts/producto.js"></script>
+</head>
+
+<body>
+    <%- include('../partials/header.ejs') %>
+    <main>
+    <div class="maindiv">
+        <% if (locals.admin) { %>
+            <h1>Edicion de Producto</h1>
+            <form action="/products/detalleProducto/<%=books.id%>/edit?_method=PUT" method="POST" enctype="multipart/form-data">
+                <input type="hidden" name="_method" value="PUT">
+                <div class="div-padre">
+                    <div class="campo">
+                        <label for="nombreProducto">Titulo del libro</label>
+                        <input type="text" name="nombreProducto" id="nombreProducto" placeholder="Nombre del libro" value="<%= books.title %>">
+                    </div>
+                    <% if (locals.errors && errors.nombreProducto) { %>
+                        <div class="error">
+                        <p><%= errors.nombreProducto.msg %> </p>
+                        </div>
+                    <% } %>
+                    <div class="campo">
+                        <label for="autors">Autor</label>
+                        <select name="autors" id="autors">
+                            <% for( let i = 0; i < autors.length; i++ ) { %>
+                                <% if (autors[i].id == books.autors_id) { %>
+                                    <option value="<%= autors[i].id %> " selected>
+                                        <%= autors[i].name %> 
+                                    </option>
+                                <% } else {%>
+                                <option value="<%= autors[i].id %> ">
+                                    <%= autors[i].name %> 
+                                </option>
+                            <% }} %>
+                        </select>
+                    </div>
+                    <div class="campo">
+                        <label for="genero">Genero</label>
+                        <select name="genero" id="genero">
+                            <% for( let i = 0; i < genres.length; i++ ) { %>
+                                <% if (genres[i].id == books.genres_id) { %>
+                                    <option value="<%= genres[i].id %> " selected>
+                                        <%= genres[i].name %> 
+                                    </option>
+                                <% } else {%>
+                                <option value="<%= genres[i].id %> ">
+                                    <%= genres[i].name %> 
+                                </option>
+                            <% }} %>
+                        </select>
+                    </div>
+                    <div class="campo">
+                        <label for="editorial">Editorial</label>
+                        <input type="text" name="editorial" id="editorial" placeholder="Nombre de editorial" value="<%= books.editorial %>">
+                    </div>
+                    <div class="campo">
+                        <label for="publicacion">Año de publicacion</label>
+                        <input type="number" name="published" id="publicacion" placeholder="<%= books.published %>" value="<%= books.published %>">
+                    </div>
+                    <% if (locals.errors && errors.published) { %>
+                        <div class="error">
+                        <p><%= errors.published.msg %> </p>
+                        </div>
+                    <% } %>
+                    <div class="descProduct">
+                        <label for="descProducto">Descripcion</label>
+                        <textarea name="descProducto" id="descProducto" rows="10"><%= books.description %></textarea>
+                    </div>
+                    <% if (locals.errors && errors.descProducto) { %>
+                        <div class="error">
+                        <p><%= errors.descProducto.msg %> </p>
+                        </div>
+                    <% } %>
+                    <div class="campo">
+                        <div class="valor">
+                            <label for="price">Precio</label>
+                            <div class="cprecio">
+                            <p>$</p>
+                            <input class="precio" type="number" name="price" id="price" placeholder="<%= books.price %>" value="<%= books.price %>">
+                            </div>
+                        </div>
+                        <% if (locals.errors && errors.price) { %>
+                            <div class="error">
+                            <p><%= errors.price.msg %> </p>
+                            </div>
+                        <% } %>
+                    </div>
+                    <div class="campoImagen">
+                        <div class="valor">
+                            <label for="stock">Stock disponible</label>
+                            <input class="precio" type="number" name="stock" id="stock" placeholder="<%= books.stock %>" value="<%= books.stock %>">
+                        </div>
+                        <% if (locals.errors && errors.stock) { %>
+                            <div class="error">
+                            <p><%= errors.stock.msg %> </p>
+                            </div>
+                        <% } %>
+                        <div class="imagen">
+                            <label for="portada">Portada</label>
+                            <input type="file" name="portada" id="portada" placeholder="portada">
+                        </div>
+                        <div class="portadaActual">
+                        <h4>Portada actual:</h4>
+                        <img src="/images/portadas/<%= books.portada %>" alt="">
+                        </div>
+                        <p class="image">Solo se permiten 'png' , 'jpg' , 'jpeg'</p>
+                        <div class="boton">
+                            <input type="submit" value="Editar">
+                        </div>
+                    </div>
+            </form>
+            <form action="/products/detalleProducto/<%=books.id%>/edit?_method=DELETE" method="post">
+                <div class="boton">
+                <input type="hidden" name="_method" value="DELETE">
+                <input type="submit" value="Eliminar Producto">
+                </div>
+            </form> 
+        <% } else {%>
+                <h1>Ups...</h1>
+            <% } %>  
+    
+    </div>
+    </main>
+    <%- include('../partials/footer.ejs') %>
+</body>
+<script type="text/javascript" src="./crearProdcuto.js"></script>
+</html>

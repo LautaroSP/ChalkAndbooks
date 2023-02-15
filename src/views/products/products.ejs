@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <%- include('../partials/head.ejs') %>
+    <link rel="stylesheet" href="/css/products.css">
+    
+</head>
+<body>
+    <%- include('../partials/header.ejs') %>
+    <main>  
+            <div class = "maindiv">
+            <!-- Start LOGO -->
+            <div class="logo-busqueda">
+                <div class="logoChalk">
+                    <img src="/images/chalkLogo.png" alt="">
+                </div>
+                <!-- Finish LOGO -->
+                <!-- Start Busqueda -->
+                <form action="" method="get" class="form-busqueda">
+                    <input type="text" name="busqueda" id="" placeholder="Busca por titulo o autor!">
+                </form>
+            </div>
+                <!-- Finish Busqueda -->
+                <h4 class="titlelib">Todos nuestros Libros!</h4>    
+                <% if (locals.admin) { %>
+                    <div class="agregarProd">
+                        <form action="/products/crearProducto" method="get">
+                            <input type="submit" value="Agregar Producto">
+                        </form>
+                    </div>
+                <% } %>
+        <section class="catalog">
+            <% for(let i = 0; i < books.length ; i++) {%> 
+            <article>
+                <img src="/images/portadas/<%= books[i].portada %>" alt="">
+                <a href="/products/detalleProducto/<%= books[i].id %> "><%= books[i].title %> </a>
+            </article>
+            <% } %> 
+        </section>
+    </div>
+    </main>
+    <%- include('../partials/footer.ejs') %>
+
+</body>
+</html>

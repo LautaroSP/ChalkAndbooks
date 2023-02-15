@@ -1,0 +1,127 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+    <link rel="stylesheet" type="text/css" href="/css/crearProducto.css">
+    <%- include('../partials/head.ejs') %>
+    <script src="/scripts/producto.js"></script>
+    
+    
+</head>
+<body>
+    <%- include('../partials/header.ejs') %>
+    <main>
+        <div class="maindiv">
+            <% if (locals.admin) { %>
+                <h1>Creacion de Producto</h1>
+                <form action="/products/crearProducto" method="post" enctype="multipart/form-data">
+                <div class="div-padre">
+                    <div class="campo">
+                        <label for="nombreProducto">Titulo del libro</label>
+                        <input type="text" name="nombreProducto" id="nombreProducto"
+                            value="<% if (locals.data) { %><%=data.nombreProducto%><% } %>">
+                    </div>
+                    <% if (locals.errors && errors.nombreProducto) { %>
+                        <div class="error">
+                        <p><%= errors.nombreProducto.msg %> </p>
+                        </div>
+                    <% } %>
+                    <div class="campo">
+                        <label for="autors">Autor</label>
+                        <select name="autors" id="autors">
+                            <% for( let i = 0; i < autors.length; i++ ) { %>
+                                <option value="<%= autors[i].id %> ">
+                                    <%= autors[i].name %> 
+                                </option>
+                            <% } %>
+                        </select>
+                    </div>
+                    <div class="campo">
+                        <label for="genero">Genero</label>
+                        <select name="genero" id="genero">
+                            <% for( let i = 0; i < generos.length; i++ ) { %>
+                                <option value="<%= generos[i].id %> ">
+                                    <%= generos[i].name %> 
+                                </option>
+                            <% } %>
+                        </select>
+                    </div>
+                    <div class="campo">
+                        <label for="editorial">Editorial</label>
+                        <input type="text" name="editorial" id="editorial" placeholder="Nombre de editorial"
+                            value="<% if (locals.data) { %><%=data.editorial%><% } %>">
+                    </div>
+                    <% if (locals.errors && errors.editorial) { %>
+                        <div class="error">
+                        <p><%= errors.editorial.msg %> </p>
+                        </div>
+                    <% } %>
+                    <div class="campo">
+                        <label for="publicacion">Año de publicacion</label>
+                        <input type="number" name="published" id="publicacion"
+                            value="<% if (locals.data) { %><%=data.published%><% } %>">
+                    </div>
+                    <% if (locals.errors && errors.published) { %>
+                        <div class="error">
+                        <p><%= errors.published.msg %> </p>
+                        </div>
+                    <% } %>
+                    <div class="descProduct">
+                        <label for="descProducto">Detalles</label>
+                        <textarea name="descProducto" id="descProducto" rows="10"><% if (locals.data) { %><%=data.descProducto%><% } %></textarea>
+                    </div>
+                    <% if (locals.errors && errors.descProducto) { %>
+                        <div class="error">
+                        <p><%= errors.descProducto.msg %> </p>
+                        </div>
+                    <% } %>
+                    <div class="campo">
+                        <div class="valor">
+                        <label for="price">Precio</label>
+                        <div class="cprecio">
+                        <p>$</p>
+                        <input class="precio" type="number" name="price" id="price" placeholder="Precio"
+                            value="<% if (locals.data) { %><%=data.price%><% } %>">
+                        </div>
+                        </div>
+                        <% if (locals.errors && errors.price) { %>
+                            <div class="error">
+                            <p><%= errors.price.msg %> </p>
+                            </div>
+                        <% } %>
+                    </div>
+                    <div class="campoImagen">
+                        <div class="valor">
+                        <label for="stock">Stock disponible</label>
+                        <input class="precio" type="number" name="stock" id="stock" placeholder="stock"
+                            value="<% if (locals.data) { %><%=data.stock%><% } %>">
+                        </div>
+                        <% if (locals.errors && errors.stock) { %>
+                            <div class="error">
+                            <p><%= errors.stock.msg %> </p>
+                            </div>
+                        <% } %>
+                    <div class="imagen">
+                    <label for="portada">Portada</label>
+                    <input type="file" name="portada" id="portada" placeholder="portada">
+                    </div>
+                    <% if (locals.errors && errors.portada) { %>
+                        <div class="error">
+                        <p><%= errors.portada.msg %> </p>
+                        </div>
+                    <% } %>
+                    <p class="image">Solo se permiten 'png' , 'jpg' , 'jpeg'</p>
+                    <div class="boton">
+                        <input type="submit" value="Enviar">
+                    </div>
+                </div>
+                </form>
+            <% } else { %>
+                <h1>Ups...</h1>
+                <% } %> 
+    </div>
+    </main>
+    <%- include('../partials/footer.ejs') %>
+</body>
+</html>

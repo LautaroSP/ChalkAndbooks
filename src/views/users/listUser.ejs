@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+    <link rel="stylesheet" href="/css/listUser.css">
+    <%- include('../partials/head.ejs') %>
+</head>
+<body>
+    <%- include('../partials/header.ejs') %>
+    <main>
+        <div class="maindiv">
+            <% if (locals.admin) { %>
+                <div class="logo-tit">
+                    <div>
+                    <img src="/images/chalkLogo.png" alt="">
+                    </div>
+                    <h1>Lista de Usuarios</h1>
+                </div>
+                <div class="lista-user">
+                    <ul>
+                        <% users.map(user => { %> 
+                        <li>
+                            <img src="/images/avatar/<%= user.avatar %>" alt="">
+                            <p class="email"><%= user.email %></p>
+                            <p class="nombre"><%= user.nombre%> <%= user.apellido %></p>
+                            <p class="rol"><%= user.rol_user.name%></p>
+                            <div class="icons">
+                                    <a href="/user/editContraAdmin/<%= user.id %>"><i class="fa-solid fa-key"></i></a>
+                                    <a href="/user/editUser/<%= user.id %>"><i class="fa-solid fa-gear"></i></a>
+                                    <a href="/user/confirmDelete/<%= user.id %>"><i class="fa-solid fa-trash"></i></a>
+                            </div>
+                        </li>
+                        <% }) %> 
+                    </ul>
+                </div>
+                <% } else { %>
+                    <div class="logo-tit">
+                        <div>
+                        <img src="/images/chalkLogo.png" alt="">
+                        </div>
+                        <h1>Ups...</h1>
+                    </div>
+                    <% } %> 
+            </div>
+        </main>
+             
+            
+    <%- include('../partials/footer.ejs') %>
+</body>
+</html>

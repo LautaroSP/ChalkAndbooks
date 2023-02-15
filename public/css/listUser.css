@@ -1,0 +1,98 @@
+* {
+    box-sizing: border-box;
+}
+body {
+    margin:0;
+    padding: 0;
+    background-color: #f3f6f4;
+}
+.logo-tit{
+    margin: 15px;
+}
+.logo-tit div{
+    display: flex;
+    justify-content: center;
+}
+.lista-user img {
+    height: 70px;
+    display: none;
+    max-width: 65px;
+}
+.lista-user ul{
+    margin:15px;
+    padding: 0;
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.lista-user li{
+    display: flex;
+    justify-content: space-between;
+    align-content: center;
+    align-items: center;
+    border: 1px dotted grey;
+    background-color: white;
+    border-radius: 5px;
+    padding: 3px;
+    font-family: 'Inter';
+    font-size: 12px;
+    margin-bottom: 5px;
+    width: 100%;
+}
+.lista-user li i{
+    color: rgb(102, 102, 179) ;
+    margin: 2px;
+}
+h1 {
+    text-align: center;
+    font-family: 'Inter';
+}
+.email {
+ width: 50%;
+}
+.nombre {
+    width: 30%;
+}
+.rol {
+    width: 12.5%;
+}
+.icons{
+    width: 7.5%;
+}
+#password , #edit , #delete{
+    display: none;
+}
+label {
+    cursor: pointer;
+}
+@media(min-width: 500px){
+    .email{
+        width: 40%;
+    }
+    .rol{
+        width: 15%;
+    }
+    .icons {
+        width: 15%;
+        display: flex;
+        flex-direction: row;
+    }
+    
+}
+@media( min-width: 700px ){
+    .lista-user img {
+        display: block;
+        margin-right: 5px;
+    }
+    .lista-user li{
+        max-width: 900px;
+        font-size: 15px;
+    }
+    p{
+        text-align: center;
+    }
+    .maindiv {
+        min-height: 1000px;
+    }
+}
